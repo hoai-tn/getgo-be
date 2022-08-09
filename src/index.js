@@ -6,6 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 // const postRouter = require('./src/routers/post.js');
 // const userRouter = require('./src/routers/user.js');
+const tourRouter = require('../src/routers/tour');
 const port = process.env.PORT || 3333;
 const app = express();
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
@@ -24,6 +25,8 @@ mongoose
 app.get('/', (req, res) => {
   res.send('hoia tran');
 });
+
+app.use('/tour', tourRouter);
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });

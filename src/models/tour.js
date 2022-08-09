@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const tourSchema = mongoose.Schema({
   idTour: String,
   title: String,
   typeTour: Number,
@@ -22,3 +22,5 @@ const userSchema = mongoose.Schema({
     default: new Date(),
   },
 });
+
+module.export = mongoose.model('Tours', tourSchema);
