@@ -1,11 +1,12 @@
+import { Request, Response } from "express";
+
 require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-// const postRouter = require('./src/routers/post.js');
-// const userRouter = require('./src/routers/user.js');
+
 const tourRouter = require('../src/routers/tour');
 const port = process.env.PORT || 3333;
 const app = express();
@@ -22,7 +23,7 @@ mongoose
     console.log('Connected to the database');
   });
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('hoia tran');
 });
 
