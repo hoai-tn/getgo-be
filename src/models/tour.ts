@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
-
-const tourSchema = mongoose.Schema({
-  idTour: String,
+// const mongoose = require('mongoose');
+import { Schema, model } from "mongoose";
+const tourSchema = new Schema({
   title: String,
   typeTour: Number,
   price: Number,
@@ -23,4 +22,4 @@ const tourSchema = mongoose.Schema({
   },
 });
 
-module.export = mongoose.model('Tours', tourSchema);
+module.exports = model('Tours', tourSchema);
